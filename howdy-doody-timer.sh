@@ -13,9 +13,9 @@ echo "on 0" | cec-client -s
 
 # Load and parse the feed, play the video
 tmpfile="/tmp/hdtfeed.xml"
-wget -O ${tmfile} ${feed}
-url=$(xmllint ${tmfile} --xpath "string(/rss/channel/item/enclosure/@url)")
-rm ${tmfile}
+wget -O ${tmpfile} ${feed}
+url=$(xmllint ${tmpfile} --xpath "string(/rss/channel/item/enclosure/@url)")
+rm ${tmpfile}
 omxplayer ${url}
 
 # Switch off the TV
