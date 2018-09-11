@@ -11,6 +11,9 @@ feed="https://www.tagesschau.de/export/video-podcast/webxl/tagesschau_https/"
 # Switch on the TV
 echo "on 0" | cec-client -s
 
+# Switch to the correct HDMI input
+echo "tx 4F:82:30:00" | cec-client -s
+
 # Load and parse the feed, play the video
 tmpfile="/tmp/hdtfeed.xml"
 wget -O ${tmpfile} ${feed}
